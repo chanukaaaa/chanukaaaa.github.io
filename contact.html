@@ -55,13 +55,16 @@
 							</form>
 
 							<script>
-								const scriptURL = 'https://script.google.com/macros/s/AKfycbxSKYB4cdZTg5S6erfuXX4gvuey81KnASw2H1Wkq18d0iDFIGFsPMKGo4yBTWGLsX-kvw/exec'
+								const scriptURL = 'https://script.google.com/macros/s/AKfycbwjrH9-TE4WNlR2XFhp1IT5YRBbXi4q4fLNZCLT7ue4wXZuz3XVNSeIdihm_W9Fu-M/exec'
 								const form = document.forms['contact']
 							  
 								form.addEventListener('submit', e => {
 								  e.preventDefault()
 								  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-									.then(response => console.log('Success!', response))
+								  	.then(response => alert("Thank you! Your form is submitted successfully."))
+									.then(() => {
+										window.location.reload();
+									})
 									.catch(error => console.error('Error!', error.message))
 								})
 							</script>
